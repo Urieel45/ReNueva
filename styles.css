@@ -1,0 +1,437 @@
+/* Variables de colores */
+:root {
+    --primary-color: #4A5859;
+    --secondary-color: #839B97;
+    --accent-color: #CFD3CE;
+    --background-color: #F4F4F4;
+    --text-color: #333333;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-left: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: var(--accent-color);
+}
+
+.nav-links a.active {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Secciones */
+.section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+/* Grid de mascotas */
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.pet-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+}
+
+.pet-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.pet-card h3, .pet-card p {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Formularios */
+.login-form, .contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: 0.8rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Registro link */
+.register-link {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.register-link a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Información de contacto */
+.contact-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.contact-details p {
+    margin: 0.5rem 0;
+}
+
+/* Botones */
+.btn {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+    }
+
+    .nav-links a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .pets-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pet-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.pet-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.pet-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.pet-details {
+    color: #666;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.pet-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pet-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.pets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .pets-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .pet-image {
+        height: 200px;
+    }
+}
+
+/* Añade estos estilos adicionales a tu archivo styles.css */
+
+.pet-detail-container {
+    display: flex;
+    gap: 2rem;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    max-width: 1000px;
+}
+
+.pet-detail-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.pet-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pet-detail-info {
+    flex: 1;
+    padding: 2rem;
+}
+
+.pet-detail-info h1 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.pet-info-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info-label {
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.adoption-status {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--accent-color);
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.status-label {
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.status.available .status-value {
+    color: #2ecc71;
+}
+
+.status.adopted .status-value {
+    color: #e74c3c;
+}
+
+.btn-adopt {
+    display: inline-block;
+    background-color: #2ecc71;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-adopt:hover {
+    background-color: #27ae60;
+}
+
+.error-message {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.error-message h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.error-message p {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .pet-detail-container {
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+    .pet-detail-image {
+        min-width: 100%;
+        height: 300px;
+    }
+
+    .pet-detail-info {
+        padding: 1.5rem;
+    }
+}
+
+.clients-table {
+    width: 100%;
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: center;
+    border-spacing: 0 10px; /* Espaciado entre filas */
+}
+
+.clients-table th, .clients-table td {
+    padding: 16px; /* Incrementa el espacio dentro de las celdas */
+    border-bottom: 1px solid #ddd;
+}
+
+.clients-table {
+    border-collapse: separate;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+}
